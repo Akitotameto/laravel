@@ -67,4 +67,18 @@ class CognitoGuard implements Guard
     {
         // throw new RuntimeException('Cognito guard cannot be used for credential based authentication.');
     }
+
+    public function company()
+    {
+        if ($this->company) {
+            return $this->company;
+        }
+
+        $jwt = $this->request->bearerToken();
+        if (!$jwt) {
+            return null;
+        }
+
+        return null;
+    }
 }
